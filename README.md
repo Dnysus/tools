@@ -1,32 +1,50 @@
 # Tools Repository
 
-This repository contains scripts and utilities to set up development environments across different operating systems.
+Automated setup scripts for development environments across different operating systems.
 
 ## Structure
 
-- **macos/**: Contains setup scripts for macOS.
-- **linux/**: Placeholder for Linux setup scripts (planned).
-- **windows/**: Placeholder for Windows setup scripts (planned).
+| Directory        | Description                                           |
+| ---------------- | ----------------------------------------------------- |
+| [macos/](macos/) | Setup scripts for macOS (Apple Silicon)               |
+| [linux/](linux/) | Setup scripts for Debian-based Linux (x86_64 & ARM64) |
 
-## Usage
+## Quick Start
 
 ### macOS
 
-The `macos/install_tools.sh` script automates the installation of essential development tools.
-
-**To run the script:**
-
 ```bash
-cd macos
-./install_tools.sh
+chmod +x macos/install_tools.sh
+./macos/install_tools.sh
 ```
 
-**What it installs:**
+**Installs:** Xcode CLI Tools, Homebrew, Git, Java 22, AWS CLI, Python 3.10, Node.js
 
-1.  **Xcode Command Line Tools**: Required for many development utilities.
-2.  **Homebrew**: The missing package manager for macOS.
-3.  **Git**: Distributed version control system.
-4.  **Java 22**: OpenJDK 22 (LTS).
-5.  **AWS CLI**: Command line interface for Amazon Web Services.
-6.  **Python 3.10**: Interpreted, high-level programming language.
-7.  **Node.js**: JavaScript runtime built on Chrome's V8 engine.
+### Linux (x86_64)
+
+```bash
+chmod +x linux/install_tools_x86.sh
+./linux/install_tools_x86.sh
+```
+
+### Linux (ARM64 / Raspberry Pi)
+
+```bash
+chmod +x linux/install_tools_arm64.sh
+./linux/install_tools_arm64.sh
+```
+
+**Installs:** Git, curl, NVM, Node.js (LTS & v20), Serverless Framework, fastfetch, Docker, AWS CLI v2
+
+## Compatibility
+
+| OS                                   | Tested |
+| ------------------------------------ | ------ |
+| macOS Sonoma/Ventura (Apple Silicon) | ✅     |
+| Raspberry Pi OS 64-bit Lite          | ✅     |
+| Debian 13 (Trixie)                   | ✅     |
+| Ubuntu 22.04+                        | ✅     |
+
+## License
+
+MIT License - see [LICENSE](LICENSE) for details.
