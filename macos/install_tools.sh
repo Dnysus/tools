@@ -25,6 +25,7 @@ else
 fi
 
 # Add Homebrew to PATH
+# shellcheck disable=SC2016
 echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
@@ -41,8 +42,10 @@ if ! java -version 2>&1 | grep -q "22"; then
   echo "Java 22 not found. Installing..."
   brew install openjdk@22
   sudo ln -sfn /opt/homebrew/opt/openjdk@22/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk-22.jdk
+  # shellcheck disable=SC2016
   echo 'export PATH="/opt/homebrew/opt/openjdk@22/bin:$PATH"' >> ~/.zprofile
   echo 'export CPPFLAGS="-I/opt/homebrew/opt/openjdk@22/include"' >> ~/.zprofile
+  # shellcheck disable=SC1090
   source ~/.zprofile
 else
   echo "Java 22 is already installed."
@@ -60,7 +63,9 @@ fi
 if ! python3.10 --version &> /dev/null; then
   echo "Python 3.10 not found. Installing..."
   brew install python@3.10
+  # shellcheck disable=SC2016
   echo 'export PATH="/opt/homebrew/opt/python@3.10/bin:$PATH"' >> ~/.zprofile
+  # shellcheck disable=SC1090
   source ~/.zprofile
 else
   echo "Python 3.10 is already installed."

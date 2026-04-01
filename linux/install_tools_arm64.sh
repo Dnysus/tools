@@ -39,11 +39,14 @@ if [ ! -d "$HOME/.nvm" ]; then
 
   # Load NVM into current session
   export NVM_DIR="$HOME/.nvm"
+  # shellcheck disable=SC1091
   [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+  # shellcheck disable=SC1091
   [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 else
   echo "NVM is already installed."
   export NVM_DIR="$HOME/.nvm"
+  # shellcheck disable=SC1091
   [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 fi
 
@@ -81,14 +84,14 @@ if ! command -v docker &> /dev/null; then
   curl -sSL https://get.docker.com | sh
 
   # Add current user to docker group
-  sudo usermod -aG docker $USER
+  sudo usermod -aG docker "$USER"
   echo "Docker installed. You may need to log out and back in for group changes to take effect."
 else
   echo "Docker is already installed."
   # Ensure user is in docker group
-  if ! groups $USER | grep -q '\bdocker\b'; then
+  if ! groups "$USER" | grep -q '\bdocker\b'; then
     echo "Adding user to docker group..."
-    sudo usermod -aG docker $USER
+    sudo usermod -aG docker "$USER"
     echo "You may need to log out and back in for group changes to take effect."
   fi
 fi
