@@ -21,6 +21,7 @@ Automated setup script for macOS development environments.
 - **Node.js** - JavaScript runtime
 - **Gemini CLI** - CLI for Google Gemini
 - **Google Cloud CLI** - CLI for Google Cloud Platform
+- **Terraform** - Infrastructure as code tool
 
 ## Usage
 
@@ -45,6 +46,7 @@ python3.10 --version
 node --version
 gemini --version
 gcloud --version
+terraform --version
 ```
 
 ## Notes

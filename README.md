@@ -18,7 +18,7 @@ chmod +x macos/install_tools.sh
 ./macos/install_tools.sh
 ```
 
-**Installs:** Xcode CLI Tools, Homebrew, Git, Java 22, AWS CLI, Python 3.10, Node.js, Gemini CLI, Google Cloud CLI
+**Installs:** Xcode CLI Tools, Homebrew, Git, Java 22, AWS CLI, Python 3.10, Node.js, Gemini CLI, Google Cloud CLI, Terraform
 
 ### Linux (x86_64)
 

@@ -90,4 +90,13 @@ else
   echo "Google Cloud CLI is already installed."
 fi
 
+# Install Terraform
+if ! command -v terraform &> /dev/null; then
+  echo "Terraform not found. Installing..."
+  brew tap hashicorp/tap
+  brew install hashicorp/tap/terraform
+else
+  echo "Terraform is already installed."
+fi
+
 echo "All installations completed."
