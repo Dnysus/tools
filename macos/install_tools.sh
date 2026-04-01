@@ -74,4 +74,20 @@ else
   echo "Node.js is already installed."
 fi
 
+# Install Gemini CLI
+if ! command -v gemini &> /dev/null; then
+  echo "Gemini CLI not found. Installing..."
+  brew install gemini-cli
+else
+  echo "Gemini CLI is already installed."
+fi
+
+# Install Google Cloud CLI
+if ! command -v gcloud &> /dev/null; then
+  echo "Google Cloud CLI not found. Installing..."
+  brew install --cask gcloud-cli
+else
+  echo "Google Cloud CLI is already installed."
+fi
+
 echo "All installations completed."

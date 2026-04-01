@@ -19,6 +19,8 @@ Automated setup script for macOS development environments.
 - **AWS CLI** - Amazon Web Services command line interface
 - **Python 3.10** - Python programming language
 - **Node.js** - JavaScript runtime
+- **Gemini CLI** - CLI for Google Gemini
+- **Google Cloud CLI** - CLI for Google Cloud Platform
 
 ## Usage
 
@@ -41,6 +43,8 @@ java -version
 aws --version
 python3.10 --version
 node --version
+gemini --version
+gcloud --version
 ```
 
 ## Notes
