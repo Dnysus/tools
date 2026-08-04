@@ -79,12 +79,20 @@ else
   echo "Node.js is already installed."
 fi
 
-# Install Gemini CLI
-if ! command -v gemini &> /dev/null; then
-  echo "Gemini CLI not found. Installing..."
-  brew install gemini-cli
+# Install Antigravity CLI
+if ! command -v antigravity &> /dev/null; then
+  echo "Antigravity CLI not found. Installing..."
+  brew install --cask antigravity-cli
 else
-  echo "Gemini CLI is already installed."
+  echo "Antigravity CLI is already installed."
+fi
+
+# Install Copilot CLI
+if ! command -v copilot &> /dev/null; then
+  echo "Copilot CLI not found. Installing..."
+  brew install copilot-cli
+else
+  echo "Copilot CLI is already installed."
 fi
 
 # Install Google Cloud CLI
@@ -102,6 +110,31 @@ if ! command -v terraform &> /dev/null; then
   brew install hashicorp/tap/terraform
 else
   echo "Terraform is already installed."
+fi
+
+# Install Android CLI
+if ! command -v android &> /dev/null; then
+  echo "Android CLI not found. Installing..."
+  brew tap android/tap
+  brew install android-cli
+else
+  echo "Android CLI is already installed."
+fi
+
+# Install Flutter
+if ! command -v flutter &> /dev/null; then
+  echo "Flutter not found. Installing..."
+  brew install --cask flutter
+else
+  echo "Flutter is already installed."
+fi
+
+# Install Gradle
+if ! command -v gradle &> /dev/null; then
+  echo "Gradle not found. Installing..."
+  brew install gradle
+else
+  echo "Gradle is already installed."
 fi
 
 echo "All installations completed."
